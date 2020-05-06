@@ -23,6 +23,18 @@ public class CompteCourant {
         this.montantDecouvertAutorise = montantDecouvertAutorise;
         this.nbComptesCourants++;
     }
+    
+    public void Debiter(double somme) {
+        if(this.solde >= somme) {
+            this.solde -= somme;
+        } else {
+            this.solde = 0;
+        }
+    }
+    
+    public void Crediter(double somme) {
+        this.solde += somme;
+    }
 
     public String getNumero() {
         return numero;
