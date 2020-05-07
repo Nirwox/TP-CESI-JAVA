@@ -1,53 +1,50 @@
-package com.cesi.bankonet;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package com.cesi.bankonet;
 
-import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import junit.framework.TestCase;
 import static org.junit.Assert.*;
-import com.cesi.bankonet.*;
 
 /**
  *
  * @author Hugo-Louvet
  */
 public class CompteCourantTest extends TestCase {
-    CompteCourant compteCourantTestCredit = new com.cesi.bankonet.CompteCourant("1","Compte Courant 1",130.00,100.00);
+    CompteCourant compteCourant = new com.cesi.bankonet.CompteCourant("1","Compte Courant 1",1000.00,100.00);
 
-    public void testNombreCompteCourant() throws Exception {
-        assertEquals(6,compteCourantTestCredit.getNbComptesCourants());
+    public void testCompteCourantDebitTest() {
+        compteCourant.Debiter(100);
+        assertEquals(900.00,compteCourant.getSolde());
     }
     
-    public void testCrediter100() throws Exception {
-        compteCourantTestCredit.Crediter(1000);
-        assertEquals(1130.00,compteCourantTestCredit.getSolde());
+    public void testCompteCourantDebit2Test() {
+        compteCourant.Debiter(-100);
+        assertEquals(1000.00,compteCourant.getSolde());
     }
     
-    public void testCrediterM1000() throws Exception {
-        compteCourantTestCredit.Crediter(-1000);
-        assertEquals(130.00,compteCourantTestCredit.getSolde());
+    public void testCompteCourantDebit3Test() {
+        compteCourant.Debiter(1100);
+        assertEquals(0.00,compteCourant.getSolde());
+    }
+        
+    public void testCompteCourantCreditTest() {
+        compteCourant.Crediter(100);
+        assertEquals(1100.00,compteCourant.getSolde());
     }
     
-    public void testDebiter100() throws Exception {
-        compteCourantTestCredit.Debiter(100);
-        assertEquals(30.00,compteCourantTestCredit.getSolde());  
+    public void testCompteCourantCredit2Test() {
+        compteCourant.Crediter(-100);
+        assertEquals(1000.00,compteCourant.getSolde());
     }
     
-    public void testDebiterM100() throws Exception {
-        compteCourantTestCredit.Debiter(-100);
-        assertEquals(130.00,compteCourantTestCredit.getSolde());
-    }
     
-    public void testCompteCourantSoldeNegatif() throws Exception {
-        CompteCourant compteCourantTestCreditNegatif = new com.cesi.bankonet.CompteCourant("2","Compte Courant 2",-130.00,100.00);
-        assertEquals(0.0,compteCourantTestCreditNegatif.getSolde());
-    }
+
 }
