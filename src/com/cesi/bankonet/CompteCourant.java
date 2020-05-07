@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.cesi.bankonet;
 
 /**
@@ -19,9 +14,13 @@ public class CompteCourant {
     public CompteCourant(String numero, String intitule, double solde, double montantDecouvertAutorise) {
         this.numero = numero;
         this.intitule = intitule;
-        this.solde = solde;
         this.montantDecouvertAutorise = montantDecouvertAutorise;
         this.nbComptesCourants++;
+        if(solde >= 0) {
+            this.solde = solde;
+        } else {
+            this.solde = 0;
+        }
     }
     
     public void Debiter(double somme) {
