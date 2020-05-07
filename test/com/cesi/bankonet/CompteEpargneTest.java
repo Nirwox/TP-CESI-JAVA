@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
  * @author Hugo-Louvet
  */
 public class CompteEpargneTest extends TestCase {
-    CompteEpargne compteEpargne = new com.cesi.bankonet.CompteEpargne("1","Compte Courant 1",1000.00,0.75);
+    CompteEpargne compteEpargne = new com.cesi.bankonet.CompteEpargne("1","Compte Epargne 1",1000.00,0.75);
 
     public void testCompteEpargneDebitTest() {
         compteEpargne.Debiter(100);
