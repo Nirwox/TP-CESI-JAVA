@@ -44,7 +44,4 @@ public class CompteCourantTest extends TestCase {
         compteCourant.Crediter(-100);
         assertEquals(1000.00,compteCourant.getSolde());
     }
-    
-    
-
 }

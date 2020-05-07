@@ -53,4 +53,6 @@ public abstract class Compte {
         }
     }
     
+    public abstract boolean isDebitAutorise();
+    
 }

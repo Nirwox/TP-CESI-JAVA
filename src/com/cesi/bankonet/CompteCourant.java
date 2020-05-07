@@ -32,4 +32,13 @@ public class CompteCourant extends Compte {
     public String toString() {
         return "CompteCourant{" + "montantDecouvertAutorise=" + montantDecouvertAutorise + '}';
     }
+    
+    @Override
+    public boolean isDebitAutorise() {
+        if(super.solde >= this.montantDecouvertAutorise) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

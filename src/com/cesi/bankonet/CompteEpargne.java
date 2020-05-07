@@ -37,4 +37,9 @@ public class CompteEpargne extends Compte {
         super.solde += interet;
         return interet;
     }
+    
+    @Override
+    public boolean isDebitAutorise() { 
+        return false; 
+    }
 }
