@@ -39,7 +39,7 @@ public class CompteEpargne extends Compte {
     }
     
     @Override
-    public boolean isDebitAutorise() { 
+    public boolean isDebitAutorise(double montant) { 
         return false; 
     }
 }

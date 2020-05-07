@@ -34,8 +34,8 @@ public class CompteCourant extends Compte {
     }
     
     @Override
-    public boolean isDebitAutorise() {
-        if(super.solde >= this.montantDecouvertAutorise) {
+    public boolean isDebitAutorise(double montant) {
+        if((super.solde-montant) >= this.montantDecouvertAutorise) {
             return true;
         } else {
             return false;

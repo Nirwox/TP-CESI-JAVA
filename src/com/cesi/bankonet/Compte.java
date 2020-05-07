@@ -53,6 +53,6 @@ public abstract class Compte {
         }
     }
     
-    public abstract boolean isDebitAutorise();
+    public abstract boolean isDebitAutorise(double montant);
     
 }
