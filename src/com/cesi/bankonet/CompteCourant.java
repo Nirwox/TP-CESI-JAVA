@@ -25,15 +25,23 @@ public class CompteCourant {
     }
     
     public void Debiter(double somme) {
-        if(this.solde >= somme) {
-            this.solde -= somme;
+        if(somme > 0) {
+            if(this.solde >= somme) {
+                this.solde -= somme;
+            } else {
+                this.solde = 0;
+            } 
         } else {
-            this.solde = 0;
+            System.out.println("La somme a débiter est négative");
         }
     }
     
     public void Crediter(double somme) {
-        this.solde += somme;
+        if(somme > 0) {
+            this.solde += somme;
+        } else {
+            System.out.println("La somme a créditer est négative");
+        }
     }
 
     public String getNumero() {
@@ -75,8 +83,9 @@ public class CompteCourant {
     public static void setNbComptesCourants(int nbComptesCourants) {
         CompteCourant.nbComptesCourants = nbComptesCourants;
     }
-    
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "CompteCourant{" + "numero=" + numero + ", intitule=" + intitule + ", solde=" + solde + ", montantDecouvertAutorise=" + montantDecouvertAutorise + '}';
+    }
 }
