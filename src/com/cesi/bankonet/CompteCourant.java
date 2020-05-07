@@ -20,6 +20,7 @@ public class CompteCourant {
             this.solde = solde;
         } else {
             this.solde = 0;
+            System.out.println("Un compte courant ne peut être crée avec un solde négatif");
         }
     }
     
