@@ -64,10 +64,6 @@ public class CompteCourant {
         return solde;
     }
 
-    public void setSolde(double solde) {
-        this.solde = solde;
-    }
-
     public double getMontantDecouvertAutorise() {
         return montantDecouvertAutorise;
     }
@@ -78,10 +74,6 @@ public class CompteCourant {
 
     public static int getNbComptesCourants() {
         return nbComptesCourants;
-    }
-
-    public static void setNbComptesCourants(int nbComptesCourants) {
-        CompteCourant.nbComptesCourants = nbComptesCourants;
     }
 
     @Override
